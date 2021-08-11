@@ -314,8 +314,6 @@ export default {
         // 发起修改用户信息的数据请求
         const {data:res} = await this.$axios.put('users/' + this.editForm.id,
         {email:this.editForm.email, mobile:this.editForm.mobile})
-      })
-      console.log(res);
       if(res.meta.status !== 200){
         return this.$message.error('更新用户信息失败！')
       }
@@ -325,9 +323,10 @@ export default {
       this.getUserList()
       // 提示修改成功
       this.$message.success('更新用户信息成功！')
-    }
+    })
   },
-};
+},
+}
 </script>
 
 <style lang="less" scoped>
