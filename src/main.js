@@ -9,6 +9,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 // 导入全局样式表
 import './assets/css/global.css'
 import axios from 'axios'
+import TreeTable from 'vue-table-with-tree-grid'
 
 Vue.config.productionTip = false
 
@@ -22,6 +23,8 @@ axios.interceptors.request.use(config => {
 })
 axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
 Vue.prototype.$axios = axios
+
+Vue.component('tree-table',TreeTable)
 
 // Vue实例
 new Vue({
